@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <meta name="google-site-verification" content="AOGJvpvf0fOK_S68fows4MMQ1cs--aigIUby5IcAQeA" />
+  <title>Unlimited Gmails Create | Iqra Dealer</title>
+  <meta name="description" content="Create Unlimited Gmails Without Phone Number — premium UI demonstration by Iqra Dealer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://unlimitedgmailscreate.vercel.app/">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="Create Unlimited Gmails | Iqra Dealer">
+  <meta property="og:description" content="Premium frontend account creation simulator.">
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      --bg: #f1f3f4;
+      --card-bg: #ffffff;
+      --text-primary: #202124;
+      --text-secondary: #5f6368;
+      --accent: #1a73e8;
+      --accent-hover: #1558b0;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      --radius: 16px;
+      --transition: 0.25s ease;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* ===== LOGIN SCREEN – GMAIL INSPIRED ===== */
+    .login-wrapper {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .login-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 40px 32px 32px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid #e8eaed;
+    }
+
+    .login-card .brand {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+
+    .login-card .brand span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .login-card h1 {
+      font-size: 26px;
+      font-weight: 400;
+      margin: 8px 0 2px;
+      color: var(--text-primary);
+    }
+
+    .login-card .sub {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .demo-badge {
+      background: #e8f0fe;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      font-size: 15px;
+      color: var(--text-primary);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 14px;
+      top: 38px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 18px;
+      padding: 4px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      border: none;
+      border-radius: 40px;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+      margin-top: 4px;
+      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 14px rgba(26, 115, 232, 0.35);
+    }
+
+    .error-msg {
+      color: #d93025;
+      font-size: 14px;
+      margin-top: 12px;
+      text-align: center;
+      min-height: 22px;
+    }
+
+    .contact-section {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e8eaed;
+      text-align: center;
+    }
+
+    .contact-section .number {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 4px 0 12px;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      padding: 10px 24px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .btn-wa:hover {
+      background: #1ebe5c;
+      transform: scale(1.02);
+    }
+
+    .footer-credit {
+      margin-top: 16px;
+      color: var(--text-secondary);
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    /* ===== DASHBOARD – GMAIL DARK/LIGHT PREMIUM ===== */
+    .dashboard {
+      display: none;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      animation: fadeUp 0.35s ease;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* navbar – glass + gmail-like */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      flex-wrap: wrap;
+    }
+
+    .navbar .brand {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .navbar .brand span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 0;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--accent);
+    }
+
+    .nav-links .logout-link {
+      color: #d93025;
+    }
+
+    .nav-links .logout-link:hover {
+      border-bottom-color: #d93025;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 26px;
+      height: 2.5px;
+      background: var(--text-primary);
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    /* cards – glassmorphism + gmail clean */
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+
+    .card h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 2px;
+      color: var(--text-primary);
+    }
+
+    .card .subhead {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .stat-item {
+      background: #ffffff;
+      padding: 18px 16px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e8eaed;
+    }
+
+    .stat-item .label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .stat-item .value {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 4px;
+    }
+
+    /* form – gmail style */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    .form-grid input {
+      width: 100%;
+      padding: 14px 16px;
+      background: #f8f9fa;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: var(--transition);
+      outline: none;
+      color: var(--text-primary);
+    }
+
+    .form-grid input:focus {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+    }
+
+    .btn-success {
+      background: var(--accent);
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      color: white;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.2);
+    }
+
+    .btn-success:hover {
+      background: var(--accent-hover);
+      transform: scale(1.02);
+    }
+
+    .btn-danger {
+      background: transparent;
+      border: 1px solid #dadce0;
+      color: #d93025;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-danger:hover {
+      background: #fce8e6;
+      border-color: #d93025;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .history-table th {
+      text-align: left;
+      color: var(--text-secondary);
+      font-weight: 500;
+      padding: 12px 8px;
+      border-bottom: 1px solid #e8eaed;
+    }
+
+    .history-table td {
+      padding: 12px 8px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+
+    .history-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* modal – gmail style */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      padding: 20px;
+    }
+
+    .modal-card {
+      max-width: 480px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 28px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+      animation: fadeUp 0.25s ease;
+    }
+
+    .modal-card h3 {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .modal-card .detail {
+      color: var(--text-secondary);
+      margin: 4px 0 2px;
+    }
+
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #dadce0;
+      padding: 10px 24px;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: #f1f3f4;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #323232;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding: 16px 0 6px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .login-card {
+        padding: 28px 20px;
+      }
+      .navbar {
+        padding: 12px 16px;
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* small extra */
+    .demo-note {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: #f8f9fa;
+      padding: 10px 16px;
+      border-radius: 40px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="login-wrapper">
+      <div class="login-card">
+        <div class="brand">Iqra <span>Dealer</span></div>
+        <h1>Create Unlimited Gmails</h1>
+        <div class="sub">Without Phone Number</div>
+        <div class="demo-badge">⚡ Secure · No phone verification</div>
+        <div class="input-group">
+          <label>Username</label>
+          <input type="text" id="loginUser" placeholder="Enter username">
+        </div>
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" id="loginPass" placeholder="Enter password">
+          <button class="password-toggle" id="togglePass" aria-label="show password">👁</button>
+        </div>
+        <button class="btn-primary" id="loginBtn">Sign in</button>
+        <div id="loginError" class="error-msg"></div>
+        <div class="contact-section">
+          <div style="font-weight:500; color:var(--text-secondary);">Contact &amp; WhatsApp</div>
+          <div class="number">03147858161</div>
+          <a href="#" class="btn-wa" id="waLoginBtn">💬 Chat on WhatsApp</a>
+          <div class="footer-credit">Developed by Iqra Dealer</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="dashboard">
+      <!-- navbar -->
+      <nav class="navbar">
+        <span class="brand">Iqra <span>Dealer</span></span>
+        <button class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></button>
+        <div class="nav-links" id="navLinks">
+          <a class="active" data-tab="dashboard">Dashboard</a>
+          <a data-tab="create">Create Account</a>
+          <a data-tab="history">History</a>
+          <a data-tab="contact">Contact</a>
+          <a class="logout-link" id="logoutBtn">Logout</a>
+        </div>
+      </nav>
+
+      <!-- DASHBOARD TAB -->
+      <div id="tabDashboard">
+        <div class="card">
+          <h2>Create Unlimited Gmails</h2>
+          <div class="subhead">Professional account creation interface</div>
+          <div class="stats-grid">
+            <div class="stat-item"><div class="label">Accounts Created</div><div class="value" id="statAccounts">0</div></div>
+            <div class="stat-item"><div class="label">Sessions</div><div class="value">1</div></div>
+            <div class="stat-item"><div class="label">Status</div><div class="value" style="font-size:20px;">🟢 Active</div></div>
+            <div class="stat-item"><div class="label">Developer</div><div class="value" style="font-size:20px;">Iqra</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREATE TAB -->
+      <div id="tabCreate" class="hidden">
+        <div class="card">
+          <h2>Create Your Email Account</h2>
+          <div class="subhead">Fill in the details to generate your account</div>
+          <div class="form-grid">
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+            <input type="text" id="desiredUser" placeholder="Desired Username" class="full">
+            <input type="password" id="createPass" placeholder="Password" class="full">
+            <input type="password" id="confirmPass" placeholder="Confirm Password" class="full">
+            <input type="email" id="recoveryEmail" placeholder="Recovery Email (optional)" class="full">
+            <input type="text" id="phoneDemo" placeholder="Phone Number — Optional" class="full">
+          </div>
+          <div style="margin-top:18px; display:flex; gap:14px; flex-wrap:wrap;">
+            <button class="btn-success" id="createDemoBtn">Create Account</button>
+          </div>
+          <div id="createMsg" style="margin-top:10px; color:var(--text-secondary); font-size:14px;"></div>
+        </div>
+      </div>
+
+      <!-- HISTORY TAB -->
+      <div id="tabHistory" class="hidden">
+        <div class="card">
+          <h2>Account History</h2>
+          <div style="overflow-x:auto;">
+            <table class="history-table">
+              <thead><tr><th>#</th><th>Email</th><th>Username</th><th>Created At</th><th>Status</th></tr></thead>
+              <tbody id="historyBody"></tbody>
+            </table>
+          </div>
+          <button class="btn-danger" id="clearHistoryBtn" style="margin-top:20px;">Clear History</button>
+        </div>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div id="tabContact" class="hidden">
+        <div class="card" style="text-align:center;">
+          <h2 style="font-size:28px; font-weight:500;">Iqra Dealer</h2>
+          <div style="font-size:18px; color:var(--text-secondary); margin:8px 0;">Contact &amp; WhatsApp</div>
+          <div style="font-size:28px; font-weight:500;">03147858161</div>
+          <a href="#" class="btn-wa" id="waDashBtn" style="margin:20px auto;">💬 Chat on WhatsApp</a>
+          <div style="margin-top:8px; color:var(--text-secondary);">Frontend Developer &amp; Website Creator</div>
+          <div style="margin-top:20px; font-size:12px; color:var(--text-secondary); opacity:0.6;">This is a demonstration interface. No real accounts are created.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="successModal">
+      <div class="modal-card">
+        <h3>✅ Account Created Successfully</h3>
+        <p style="color:var(--text-secondary); margin:6px 0 14px;">Your account has been generated.</p>
+        <div id="modalDetails"></div>
+        <div class="flex-between">
+          <button class="btn-outline" id="copyModalBtn">📋 Copy</button>
+          <button class="btn-primary" id="closeModalBtn" style="width:auto; padding:10px 28px;">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script>
+    (function() {
+      // state
+      let loggedIn = false;
+      let demoAccounts = JSON.parse(localStorage.getItem('demoHistory') || '[]');
+      let statCounter = demoAccounts.length;
+
+      // DOM refs
+      const loginScreen = document.getElementById('loginScreen');
+      const dashboard = document.getElementById('dashboard');
+      const loginUser = document.getElementById('loginUser');
+      const loginPass = document.getElementById('loginPass');
+      const loginBtn = document.getElementById('loginBtn');
+      const loginError = document.getElementById('loginError');
+      const togglePass = document.getElementById('togglePass');
+      const logoutBtn = document.getElementById('logoutBtn');
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.getElementById('hamburgerBtn');
+      const tabs = document.querySelectorAll('[data-tab]');
+      const tabContents = {
+        dashboard: document.getElementById('tabDashboard'),
+        create: document.getEle
